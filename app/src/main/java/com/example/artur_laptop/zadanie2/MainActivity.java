@@ -1,5 +1,7 @@
 package com.example.artur_laptop.zadanie2;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -46,12 +48,10 @@ public class MainActivity extends AppCompatActivity {
         });
         button_submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                TextView textView = (TextView) findViewById(R.id.textAfterSubmit);
-                /*EditText edit =  (EditText) findViewById(R.id.first_name);
-                EditText edit2 =  (EditText) findViewById(R.id.surname);
-               // String napis = edit.getText().toString();
-                textView.setText(edit.getText()  + " " + edit2.getText());*/
-                textView.setText(edit.getText().toString()  + " " +  edit2.getText().toString());
+                Context context;
+                context = getApplicationContext();
+                Intent intent = new Intent(context,Obrazek.class);
+                startActivity(intent);
 
             }
         });
